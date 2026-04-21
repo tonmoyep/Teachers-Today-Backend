@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "teachers-today",
+  "private_key_id": "4672d0530f14fdbb32af0ba5f9db25bb9ef92b9c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCuuXjD9/KWHdrr\nIQv6nBnK33Cti57HO2vbhYG9APqHipGKWQpCt16PfRvEMZaMLSDANhunnezSHo3u\nW7XSJyDPum+ZBaGME+R96fFokHQs/rmJbBlYXs+RO6JVjxpH4wXlxwVIkuYhhv8f\nEcVyGHgZyfX5uBw0g5C398vv0HhtPUexSwzw2WCpthi5m4fxKqLLs7pkzwQnPUMv\n4iIzNLL5l1bQm+M2UlZBunpHNb+xHNphqHJv8XElPqHU008e6suZXh8jG86pFZHQ\n93sz/81+Ymx6U7vU5gZALYuDTINZara/TEW8pQ9kdbrEg+JS2ZZDl5LJKvpkcNkv\nTOmgOVMBAgMBAAECggEAHHLrjxunPo+5jkZRC9WbPNVDz1C9TMWdQAmNayemeHz0\nn0OfMDy+I1E6ElMGpxKj/gKcCcnk06jmRYoI4Uu+A8S17gL6NPN6OpGQXTeutYgm\nJTzaJZw5DMsvw+GV5GA6chmFKotsosc3G/50mSloc2ksaU7JHOMnzvnZwABAKNJS\nizkgER8KlclRyc/Bcxwc4RqEorNlexNeTwSUP84BgCVUgHWSUtLCdx2t+gLv51sT\nlcJhHQdpGwSMf0jwpopU0RyWijFySmaELk/JnhPuzvGOhLnNS6OiASSS5xhBEEeC\nU3gvJ9RGtX2TDfNX2bCt8pNKsKW63FRZNbbZ9iq73wKBgQDmv5XZPzPR+x49+n8f\nUH6WF4qpVbIfyUjZEkefjeONucqDtP5//q72mecX75rh3Zh5f0TEkuRf/IIRwxhd\nClHrZ3DXOZhX0qPkF1jHQs2IyfDwLv7AsV5ZWELLVx/IUJWhq/ci6nQCbXXZpdTl\nEksgdySJb/E5kPwndmMx4lPSqwKBgQDB2GCuE4KHs2vtBCiwi/h870msEr8l+FWE\n9LTLLR0ibkEHF7XnOGVY0jvSNb2AxYTgLK9poeCpQOEi2RDentsIiWEGKLqqwtUU\n8uoQK1xFTLHv8DU2gUh3+doj24nYr6U8B2CCMgs2ZvobydCuTmPu9xZDK+GYcLq4\n0GTyBMGRAwKBgEJgMhbAG4P3nIdvm0nCuecq9nQndom2OQJYQ8od4qtOGncwhVUE\nSggd1WAJSKBYQhgRCBMTviXuWOwLFuMMqOvyYX9Hzg7VRNfD74HCMaV7kZdFrXp4\niw9gWDZt5XKV27UZ5olgr+ZS3mexUEBktr+sBhKS5O0OS7p+T6J13G7pAoGBAKui\nlxgLFkxpRWp7gDux87dLeIPvpWhNVgt/UIWF0IIn9VP+XoX4nWPj4ivigYR/X4PO\njRKOzomOdMmSQSmcpnwMh+gYMA/6qwj9fNoMSorhubuliLhWCICSrd+KB6fg/gEE\n1yLwhJUK4PGx5CAyMLHp/cBEHmAHkI0LmBXiuDFZAoGAS6Pnv7jhLQYY6ET0uMr5\n/NHHdqfEgjyfkijnF6gKghitsFwf8OSvxn2RhJ9OF9tnlfVkaSAUHD/8PH0oHFAY\nk4YA1bw5QWmdZMCZwZ2KauIM+NVSlRiirQL9FVaVf4VzqqPYeL0zijBV2gpg/oi1\nktSiibKz2Ei9nx9Yz4BYA7I=\n-----END PRIVATE KEY-----\n",
+  "client_email": "uploadfiles@teachers-today.iam.gserviceaccount.com",
+  "client_id": "103578466951710392814",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/uploadfiles%40teachers-today.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
