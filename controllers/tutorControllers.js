@@ -1,4 +1,5 @@
 const bscrypt = require("bcryptjs");
+const axios = require("axios");
 const Tutor = require("../schemas/Tutor");
 const jwt = require("jsonwebtoken");
 const { uploadImage } = require("./uploadImage");
@@ -1263,6 +1264,45 @@ exports.countJob = async (req, res) => {
   }
 };
 
+async function getNotionTutorsProvidedCount() {
+  const databaseId = "c6402963663c4c41aea0b8378f0de95b";
+  const notionApiKey = process.env.NOTION_API_KEY;
+  let count = 0;
+  let hasMore = true;
+  let startCursor = undefined;
+
+  while (hasMore) {
+    const body = {
+      filter: {
+        or: [
+          { property: "Status", status: { equals: "Due" } },
+          { property: "Status", status: { equals: "Done" } },
+        ],
+      },
+      page_size: 100,
+    };
+    if (startCursor) body.start_cursor = startCursor;
+
+    const response = await axios.post(
+      `https://api.notion.com/v1/databases/${databaseId}/query`,
+      body,
+      {
+        headers: {
+          Authorization: `Bearer ${notionApiKey}`,
+          "Notion-Version": "2022-06-28",
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    count += response.data.results.length;
+    hasMore = response.data.has_more;
+    startCursor = response.data.next_cursor;
+  }
+
+  return count + 116;
+}
+
 exports.countHome = async (req, res) => {
   let query = { status: "published", "archivedTuition.archived": false };
 
@@ -1271,15 +1311,23 @@ exports.countHome = async (req, res) => {
       Tutor.countDocuments(),
       Tution.countDocuments(query),
     ]);
+
+    let tutorsProvidedCount = 0;
+    try {
+      tutorsProvidedCount = await getNotionTutorsProvidedCount();
+    } catch (notionError) {
+      console.log("Notion API error:", notionError.message);
+    }
+
     return res.json(
       successResponse(true, 200, "Data retrieved", {
         tutorCount,
         jobCount,
+        tutorsProvidedCount,
       })
     );
   } catch (error) {
     console.log(error);
-
     return res.json(successResponse(false, 500, "server down", []));
   }
 };
