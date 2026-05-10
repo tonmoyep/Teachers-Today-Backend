@@ -1264,7 +1264,11 @@ exports.countJob = async (req, res) => {
   }
 };
 
+let notionCache = { value: 0, expiresAt: 0 };
+
 async function getNotionTutorsProvidedCount() {
+  if (Date.now() < notionCache.expiresAt) return notionCache.value;
+
   const databaseId = "c6402963663c4c41aea0b8378f0de95b";
   const notionApiKey = process.env.NOTION_API_KEY;
   let count = 0;
@@ -1287,6 +1291,7 @@ async function getNotionTutorsProvidedCount() {
       `https://api.notion.com/v1/databases/${databaseId}/query`,
       body,
       {
+        timeout: 8000,
         headers: {
           Authorization: `Bearer ${notionApiKey}`,
           "Notion-Version": "2022-06-28",
@@ -1300,7 +1305,9 @@ async function getNotionTutorsProvidedCount() {
     startCursor = response.data.next_cursor;
   }
 
-  return count + 116;
+  const result = count + 116;
+  notionCache = { value: result, expiresAt: Date.now() + 10 * 60 * 1000 };
+  return result;
 }
 
 exports.countHome = async (req, res) => {
